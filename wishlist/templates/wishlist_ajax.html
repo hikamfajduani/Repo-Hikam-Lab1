@@ -85,16 +85,35 @@
     <th>Deskripsi</th>
     </tr>
     {% comment %} Tambahkan data di bawah baris ini {% endcomment %} 
-    {% comment %} Tambahkan data di bawah baris ini {% endcomment %}
-    {% for barang in list_barang %}
-        <tr>
-            <th>{{barang.nama_barang}}</th>
-            <th>{{barang.harga_barang}}</th>
-            <th>{{barang.deskripsi}}</th>
-        </tr>
-    {% endfor %}
+    <tbody id="table">
+      
+    </tbody>
 </table>
 <h5 class="text1">Sesi terakhir login: {{ last_login }}</h5>
+<form method="POST" action="">
+    {% csrf_token %}
+    <table>
+      <tr>
+        <td>Nama Barang: </td>
+        <td><input type="text" id="nama_barang" name="nama_barang" placeholder="Nama Barang" class="form-control"></td>
+      </tr>
+
+      <tr>
+        <td>Harga Barang: </td>
+        <td><input type="number" id="harga_barang" name="harga_barang" placeholder="Harga Barang" class="form-control"></td>
+      </tr>
+
+      <tr>
+        <td>Deskripsi: </td>
+        <td><textarea class="form-control" id="deskripsi" name="deskripsi"></textarea></td>
+      </tr>
+
+      <tr>
+        <td></td>
+        <td><input class="btn btn-primary" type="submit" value="Submit" id="addWishlistBtn"></td>
+      </tr>
+    </table>
+  </form>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 </body>
 

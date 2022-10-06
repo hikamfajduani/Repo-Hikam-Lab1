@@ -26,7 +26,6 @@ def show_wishlist(request):
 @login_required(login_url='/wishlist/login/')
 # Create your views here.
 def show_wishlist_ajax(request):
-    data_barang_wishlist = BarangWishlist.objects.all()
     context = {
     'nama': 'Hikam Fajduani',
     'last_login': request.COOKIES['last_login'],
