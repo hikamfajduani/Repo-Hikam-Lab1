@@ -1,11 +1,5 @@
 from django.urls import path
-from wishlist.views import show_wishlist
-from wishlist.views import show_xml #sesuaikan dengan nama fungsi yang dibuat
-from wishlist.views import show_json #sesuaikan dengan nama fungsi yang dibuat
-from wishlist.views import show_json_by_id #sesuaikan dengan nama fungsi yang dibuat
-from wishlist.views import register #sesuaikan dengan nama fungsi yang dibuat
-from wishlist.views import login_user #sesuaikan dengan nama fungsi yang dibuat
-from wishlist.views import logout_user #sesuaikan dengan nama fungsi yang dibuat
+from wishlist.views import show_wishlist, show_xml, show_json, show_json_by_id, register, login_user, logout_user, show_wishlist_ajax, create_wishlist
 
 app_name = 'wishlist'
 
@@ -17,4 +11,6 @@ urlpatterns = [
     path('register/', register, name='register'), #sesuaikan dengan nama fungsi yang dibuat
     path('login/', login_user, name='login'), #sesuaikan dengan nama fungsi yang dibuat
     path('logout/', logout_user, name='logout'), #sesuaikan dengan nama fungsi yang dibuat
+    path('ajax/', show_wishlist_ajax, name='show_wishlist_ajax'),
+    path("ajax/submit", create_wishlist, name="create_wishlist"),
 ]
